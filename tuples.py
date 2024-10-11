@@ -32,10 +32,16 @@ if os.path.exists(local_directory):
 full_path = Path(__file__)
 
 # Get the file name
-file_name = full_path.name
-
+file_name = os.path.splitext(os.path.basename(full_path))[0]+".yaml"
 print(f"The name of the current file is: {file_name}")
-#file_path = 
+file_path = Path(file_name)
+
+if not file_path.is_file():
+    # Create the file
+	file_path.write_text("This is a new file created because it did not exist.")
+	logger.success("This was created")
+else:
+	print(f"{file_path} already exists.")
 
 single_tuple = (5,)
 my_tuple_to_list = list(my_tuple)
