@@ -39,7 +39,8 @@ file_path = Path(file_name)
 if not file_path.is_file():
     # Create the file
 	file_path.write_text("This is a new file created because it did not exist.")
-	logger.success("This was created")
+	logger.error("Configuration File was not present. Creating and Exiting. Please configure.")
+	exit()
 else:
 	print(f"{file_path} already exists.")
 
