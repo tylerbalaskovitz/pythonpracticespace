@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 # Sample data (could be replaced with a database or other source)
 data = {
-    'message': 'Hello, World!',
+    'message': 'Hello, Evelyn!',
     'status': 'success'
 }
 
@@ -15,7 +15,11 @@ def get_message():
 
 @app.route('/')
 def home():
-    return "Hello, Flask!"
+    return "Hello, Evelyn I'm writing this in Python!"
+
+@app.route('/secret')
+def secret():
+    return "I like to play RuneScape "
 
 # Run the application
 if __name__ == '__main__':
