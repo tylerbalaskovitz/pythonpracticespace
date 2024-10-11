@@ -1,4 +1,5 @@
 # Example of a tuple
+import maintest
 import boto3
 import os
 from loguru import logger
@@ -35,3 +36,5 @@ print(json_data)
 logger.info(my_tuple)
 print("Single Tuple here:")
 print(single_tuple)
+
+print(maintest.hello())
