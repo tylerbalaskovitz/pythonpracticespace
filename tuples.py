@@ -1,5 +1,6 @@
 # Example of a tuple
 import maintest
+from pathlib import Path
 import boto3
 import os
 from loguru import logger
@@ -26,6 +27,15 @@ if not os.path.exists(local_directory):
 if os.path.exists(local_directory):
 	os.rmdir(local_directory)
 	logger.error("Directory succesfully removed")
+
+# Get the full path of the current file
+full_path = Path(__file__)
+
+# Get the file name
+file_name = full_path.name
+
+print(f"The name of the current file is: {file_name}")
+#file_path = 
 
 single_tuple = (5,)
 my_tuple_to_list = list(my_tuple)
